@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Useless Button App - ₹10</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    #message {
+      font-size: 24px;
+      max-width: 80%;
+      margin-bottom: 50px; /* Message upar */
+      min-height: 60px; /* thoda space bana rahe */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    button {
+      background-color: red;
+      color: white;
+      border: none;
+      width: 120px;
+      height: 120px;
+      font-size: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 15px red;
+      transition: transform 0.1s ease;
+      margin-top: auto; /* Button ko niche shift karne ke liye */
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    #price-note {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #aaa;
+      user-select: text;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="message">Press the button... if you dare. <span id="emoji">🤔</span></div>
+
+  <button onclick="pressButton()">Don't Touch Me</button>
+
+  <div id="price-note">
+    Is app ka price sirf ₹10 hai.  
+    Agar hasta hai to donate karo: <br><br>
+    <strong>UPI ID: bisht457gh@okhdfcbank</strong><br>
+    (Ye ek joke hai... ya nahi?)
+  </div>
+
+  <script>
+    const messages = [
+      { text: "Kyu dabaya? Ye bekaar hai!", emoji: "🙄" },
+      { text: "Ab firse kyu dabaya?", emoji: "😒" },
+      { text: "Tum bore ho kya?", emoji: "😴" },
+      { text: "Isse kuch nahi hone wala...", emoji: "🤷‍♂️" },
+      { text: "Bas kar bhai!", emoji: "✋" },
+      { text: "Ab to mujhe bhi sharam aa rahi hai!", emoji: "😳" },
+      { text: "Kya kar rahe ho apne life ke sath?", emoji: "😵" },
+      { text: "Yaha kuch bhi nahi milega!", emoji: "🚫" },
+      { text: "Yeh button tumhara waqt barbaad karega.", emoji: "⌛" },
+      { text: "Phir se? Seriously?", emoji: "😑" },
+      { text: "App uninstall karne ka time aa gaya hai.", emoji: "📴" },
+      { text: "Kya tumhara net slow hai ya tum?", emoji: "🐢" },
+      { text: "Button ko chhod bhi do ab!", emoji: "🙅‍♂️" },
+      { text: "Bas kar, maa ka phone aaya hai.", emoji: "📞" },
+      { text: "Zindagi ka goal mil gaya kya?", emoji: "🎯" },
+      { text: "Agar boring ho to mera dost banao!", emoji: "🤝" },
+      { text: "Tum itne time tak yaha kaise ho?", emoji: "🕵️‍♂️" },
+      { text: "Phone thoda relax karega ab.", emoji: "😌" },
+      { text: "Button dabane se kuch magic nahi hoga.", emoji: "🪄" },
+      { text: "Isse zyada maza nahi milega!", emoji: "😕" },
+      { text: "Yeh button tumse pyaar nahi karta.", emoji: "💔" },
+      { text: "Ab aakhri baar soch ke dabao.", emoji: "🤨" },
+      { text: "Tumhari zindagi ka sabse bada test hai yeh button.", emoji: "📝" },
+      { text: "Mujhe bhi break chahiye, ruk jao!", emoji: "⏸️" },
+      { text: "Tum seriously? Chill karo thoda.", emoji: "🧊" },
+      { text: "Life short hai, yeh button mat dabao.", emoji: "⚠️" }
+    ];
+
+    function pressButton() {
+      const random = Math.floor(Math.random() * messages.length);
+      const msg = messages[random];
+      document.getElementById("message").innerHTML = `${msg.text} <span id="emoji">${msg.emoji}</span>`;
+    }
+  </script>
+
+</body>
+</html>
